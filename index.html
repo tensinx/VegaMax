@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VegaMax — 다운로드</title>
+  <style>
+    :root{--accent:#6b5cff;--muted:#666;--bg:#0f1724;--card:#0b1220;--glass:rgba(255,255,255,0.04)}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans KR",Helvetica,Arial;background:linear-gradient(180deg,#071026 0%, #0b1230 100%);color:#e6eef8}
+    .wrap{max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:16px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#07203b}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-top:22px}
+    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 6px 20px rgba(3,7,18,0.6);}
+
+    .download-panel{display:flex;flex-direction:column;gap:12px}
+    .big-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#3dd5ff);color:#041025;font-weight:700;text-decoration:none;font-size:16px}
+    .meta{font-size:13px;color:var(--muted)}
+
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    .feature{background:var(--glass);padding:10px;border-radius:8px}
+
+    .screenshot{height:160px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);}
+
+    .changelog{max-height:260px;overflow:auto;font-size:14px;color:#d7e6ff}
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.download-panel{order:-1}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">VM</div>
+      <div>
+        <h1>VegaMax</h1>
+        <p class="lead">이미지 기반 ADB 매크로 툴 — 손쉬운 자동화, 강력한 설정</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h2>다운로드</h2>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:12px">
+            <a id="downloadBtn" class="big-btn" href="/VegaMax.exe" download>
+              ⤓ VegaMax 다운로드
+            </a>
+            <div class="meta">버전: <strong id="ver">v1.0.0</strong> • 파일크기: <span id="size">12.3 MB</span></div>
+          </div>
+
+          
+
+          <h3 style="margin-top:16px">설치 가이드</h3>
+          <ol style="padding-left:18px;color:var(--muted)">
+            <li>다운로드한 exe 파일을 실행하세요. (관리자 권한 권장)</li>
+            <li>설치 후 프로그램을 실행하고 설정 ▶︎ ADB 경로에서 adb.exe 경로를 지정하세요.</li>
+            <li>이미지 폴더를 선택하고 타겟 이미지를 등록한 뒤 매크로를 실행하세요.</li>
+          </ol>
+
+          <h3 style="margin-top:12px">시스템 요구사항</h3>
+          <ul style="padding-left:18px;color:var(--muted)">
+            <li>Windows 10/11 (64-bit 권장)</li>
+            <li>Python 라이브러리(배포판 포함) 또는 독립 실행형 exe</li>
+            <li>LDPlayer 같은 에뮬레이터 및 ADB 환경</li>
+          </ul>
+
+          <h3 style="margin-top:12px">릴리즈 노트</h3>
+          <div class="changelog">
+            <strong>v1.0.0</strong>
+            <ul>
+              <li>기본 이미지 매칭 및 ADB 제어 기능 구현</li>
+              <li>타겟 프로파일 저장/불러오기</li>
+              <li>GUI에서 ADB 경로 설정 기능 추가</li>
+            </ul>
+            <strong>v0.9.0 (beta)</strong>
+            <ul>
+              <li>초기 베타 버전 배포</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px">
+          <h3>FAQ</h3>
+          <details style="margin-top:8px"><summary>Q: ADB가 인식 안돼요</summary><div style="padding:8px;color:var(--muted)">A: 설정 > ADB 경로에서 adb.exe를 정확히 지정하세요. 에뮬레이터가 켜져 있어야 합니다.</div></details>
+          <details style="margin-top:6px"><summary>Q: 이미지 매칭 정확도를 높이고 싶어요</summary><div style="padding:8px;color:var(--muted)">A: 타겟 이미지의 임계값(threshold)을 높이고 해상도/크롭된 이미지를 사용하세요.</div></details>
+        </section>
+
+      </main>
+
+      <aside>
+
+            <h4 style="margin:10px 0 6px">핵심 기능</h4>
+            <div class="features">
+              <div class="feature">이미지 탐지 & 자동 클릭</div>
+              <div class="feature">ADB 직접 제어 (탭/롱프레스/드래그)</div>
+              <div class="feature">쿨다운 및 임계값 설정</div>
+              <div class="feature">프로파일 저장/불러오기</div>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:6px 0">지원/문의</h4>
+            <div class="meta">이메일: areta7084@gmail.com</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>설정 예시</h4>
+          <div style="font-size:13px;color:var(--muted)">기본 ADB 경로: <code id="exampleAdb">C:\\LDPlayer\\LDPlayer9\\adb.exe</code></div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="card" style="padding:12px;display:flex;justify-content:space-between;align-items:center">
+        <div>© VegaMax 2025 — Made By Areta</div>
+        <div class="meta">빌드: <strong id="build">2025-09-28</strong></div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // optional: 동적 정보 바인딩 (파일크기·버전은 서버에서 교체하세요)
+    document.getElementById('ver').textContent = 'v1.0.0';
+    document.getElementById('size').textContent = '12.3 MB';
+
+    // 다운로드 버튼 추적(클라이언트 사이드 카운트 예시)
+    const dlBtn = document.getElementById('downloadBtn');
+    dlBtn.addEventListener('click', ()=>{
+      try{ localStorage.setItem('vegamax_dl', (Number(localStorage.getItem('vegamax_dl')||0)+1).toString()); }
+      catch(e){}
+    });
+  </script>
+</body>
+</html>
